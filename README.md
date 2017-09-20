@@ -1,6 +1,6 @@
 ![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
 
-# JS | Hangman
+# JS | Canvas Hangman
 
 ## Introduction
 
@@ -21,7 +21,7 @@ We will separate the game logic from the iteration with the `canvas`. We should 
 ## 1. First iteration: Game Logic
 
 :::info
-In order to do the game logic, we add some **Jasmine** tests to help you developing. Navigate to:
+In order to do the game logic, we add some **Jasmine** tests to help you. Navigate to:
 
 ```htmlmixed=
 starter_code
@@ -32,22 +32,22 @@ Open the `SpecRunner.html` to check them.
 
 ### Hangman Constructor
 
-First of at all let's create or Hangman constructor. It should have the following properties:
+First, of at all let's create or Hangman constructor. It should have the following properties:
 
 - **words**. An array where we will store all the words that the player need to guess. We will take one of them randomly.
-- **secretWord**. Here we will store the word choosen for each game.
+- **secretWord**. Here we will store the word chosen for each game.
 - **letters**. An array to store the letters the user already clicked, so we do not repeat them.
 - **guessedLetter**. A string to store the letters the user clicked and guessed. We will use this to know when the user wins.
-- **errorsLeft**. It should starts at 10, and decrease every time a user click on a letter that is not in the word.
+- **errorsLeft**. It should start at 10, and decrease every time a user clicks on a letter that is not in the word.
 
 ### Prototypes properties
 
 - `_getWrod()`. Returns a random word from our array `words`.
 - `checkIfLetter`. This function should check if the key the user type is a letter.
-- `_checkClickedLetters`. Checks if the pressed letter was already press and return `true` if it was not or `false` in the opposite case.
+- `_checkClickedLetters`. Checks if the pressed letter already pressed and return `true` if it was not or `false` in the opposite case.
 - `_checkGameOver`. Returns a bolean value, `true` if the users lose, and `false` in any other case.
-- `_checkWinner`. Check if the users wins and returns a boolean value.
-- `_addCorrectLetter`. Adds to `guessedLetter` variable, the letter that was pressed. Also should checks if the users wins.
+- `_checkWinner`. Check if the users win and return a boolean value.
+- `_addCorrectLetter`. Adds to `guessedLetter` variable, the letter that was pressed. Also, should checks if the users win.
 - `_addWrongLetter`. Should substrac one from the variable `errorsLeft` and check if the game is over.
 
 ## 2. Second Iteration: Draw in Canvas
@@ -60,22 +60,22 @@ Let´s create a constructor `HangmanCanvas` and store in a variable our `canvas`
 
 ### Creating the board
 
-First we need to draw the board. We should clear the `canvas`, so every time we start the game we have a clean one. We can also set up here the `width` we want to set to our lines.
+First, we need to draw the board. We should clear the `canvas`, so every time we start the game we have a clean one. We can also set up here the `width` we want to set to our lines.
 
 ### Draw the Secret Word Lines
 
-We know the secret word so we should put one line for each of the letter the user have to guess.
+We know the secret word so we should put one line for each of the letters the user has to guess.
 
 ### Write the Guessed Letters and the Wrong Ones
 
-Every time a user clicks the keyboard, after checking if the letter was not already clicked, we should write it on our board. If the secret word include the letter we should write it on the position it corresponds, and if is not included in the secret word, we will write it on the top right so the user knows which ones he already clicked.
+Every time a user clicks the keyboard, after checking if the letter was not already clicked, we should write it on our board. If the secret word includes the letter we should write it in the position it corresponds, and if is not included in the secret word, we will write it on the top right so the user knows which ones he already clicked.
 
 ### Draw the Hangman
 
-Last task, we need to draw **THE HANGMAN**. You can notice the draw is componed of lines and one circle. Go ahead and think how can we do it :wink:
+The last task, we need to draw **THE HANGMAN**. You can notice the draw is componed of lines and one circle. Go ahead and think how can we do it :wink:
 
 ## Bonus Iteration
 
-Your game is finished! Anybody can play it, but we need to show them something when they win or lose, so go ahead and create two function `gameOver` and `winner`, to display the images available on the `starter_code > images` folder.
+Your game is finished! Anybody can play it, but we need to show them something when they win or lose, so go ahead and create two functions `gameOver` and `winner`, to display the images available on the `starter_code > images` folder.
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_1dc0d7772d204da800d078c153c12e47.png)
