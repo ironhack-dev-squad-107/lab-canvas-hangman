@@ -26,15 +26,21 @@ Hangman.prototype._checkClickedLetters = function(key) {
 Hangman.prototype._addCorrectLetter = function(i){
   this.hangmanCanvas._writeCorrectLetter(i);
   this.guessedLetter += this.secretWord[i].toUpperCase();
-  if (this._checkWinner()) {  console.log("winner"); }
-  if (this._checkWinner()) {  this.hangmanCanvas._winner(); }
+  if (this._checkWinner()) { console.log("winner"); }
+  if (this._checkWinner()) {
+    this.hangmanCanvas._winner();
+    this.clearGame();
+  }
 };
 
 Hangman.prototype._addWrongLetter = function (letter){
   this.hangmanCanvas._writeWrongLetter(letter, this.errorsLeft);
   this.errorsLeft--;
   if (this._checkGameOver()) { console.log("looser"); }
-  if (this._checkGameOver()) { this.hangmanCanvas._gameOver(); }
+  if (this._checkGameOver()) {
+    this.hangmanCanvas._gameOver();
+    this.clearGame();
+  }
 };
 
 Hangman.prototype._checkGameOver = function() {
@@ -45,8 +51,17 @@ Hangman.prototype._checkWinner = function() {
   return this.guessedLetter.length === this.secretWord.length ? true : false;
 };
 
+Hangman.prototype.clearGame = function() {
+  setTimeout(function () {
+    document.getElementById("game").style.display = 'none';
+    document.getElementById("title").style.display = 'block';
+  }, 1000);
+};
+
 document.getElementById("start-game-button").onclick = function(){
   hangman = new Hangman();
+  document.getElementById("title").style.display = 'none';
+  document.getElementById("game").style.display = 'block';
 };
 
 function getPos(key) {
