@@ -42,13 +42,13 @@ First, of at all let's create or Hangman constructor. It should have the followi
 
 ### Prototypes properties
 
-- `_getWrod()`. Returns a random word from our array `words`.
+- `getWrod()`. Returns a random word from our array `words`.
 - `checkIfLetter`. This function should check if the key the user type is a letter.
-- `_checkClickedLetters`. Checks if the pressed letter already pressed and return `true` if it was not or `false` in the opposite case.
-- `_checkGameOver`. Returns a bolean value, `true` if the users lose, and `false` in any other case.
-- `_checkWinner`. Check if the users win and return a boolean value.
-- `_addCorrectLetter`. Adds to `guessedLetter` variable, the letter that was pressed. Also, should checks if the users win.
-- `_addWrongLetter`. Should substrac one from the variable `errorsLeft` and check if the game is over.
+- `checkClickedLetters`. Checks if the pressed letter already pressed and return `true` if it was not or `false` in the opposite case.
+- `checkGameOver`. Returns a bolean value, `true` if the users lose, and `false` in any other case.
+- `checkWinner`. Check if the users win and return a boolean value.
+- `addCorrectLetter`. Adds to `guessedLetter` variable, the letter that was pressed. Also, should checks if the users win.
+- `addWrongLetter`. Should substrac one from the variable `errorsLeft` and check if the game is over.
 
 ## 2. Second Iteration: Draw in Canvas
 
